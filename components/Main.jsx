@@ -18,7 +18,13 @@ export function Main() {
   return (
     <>
       <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-        <View>
+        <View
+          style={{
+            padding: 30,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Logo />
         </View>
         {games.length === 0 ? (
