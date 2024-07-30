@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedGameCard } from "./GameCard";
 import { Logo } from "./Logo";
+import { Link } from "expo-router";
 
 export function Main() {
   const [games, setGames] = useState([]);
@@ -21,12 +22,17 @@ export function Main() {
         <View
           style={{
             padding: 30,
-            justifyContent: "center",
-            alignItems: "center",
+            justifyContent: "flex-start",
           }}
         >
           <Logo />
         </View>
+        <Link
+          href="/about"
+          style={{ color: "#ffff", fontSize: 20, padding: 20 }}
+        >
+          ir al About
+        </Link>
         {games.length === 0 ? (
           <View>
             <ActivityIndicator size={"large"} />
