@@ -1,10 +1,11 @@
-import { View, ActivityIndicator, FlatList } from "react-native";
+import { View, ActivityIndicator, FlatList, Pressable } from "react-native";
 import { getLatestGames } from "../lib/metacritic";
 import { useState, useEffect } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedGameCard } from "./GameCard";
 import { Logo } from "./Logo";
 import { Link } from "expo-router";
+import { HomeIcon } from "./Icons";
 
 export function Main() {
   const [games, setGames] = useState([]);
@@ -28,10 +29,13 @@ export function Main() {
           <Logo />
         </View>
         <Link
+          asChild
           href="/about"
           style={{ color: "#ffff", fontSize: 20, padding: 20 }}
         >
-          ir al About
+          <Pressable>
+            <HomeIcon size={44}/>
+          </Pressable>
         </Link>
         {games.length === 0 ? (
           <View>
