@@ -1,5 +1,9 @@
 import Feather from "@expo/vector-icons/Feather";
 
-export const CircleIcon = ({size}) => <Feather name="info" size={size} color="white"/>;
+export const CircleIcon = (props) => (
+  <Feather name="info" size={44} color="white" {...props} />
+);
 
-export const HomeIcon = ({size}) => <Feather name="home" size={size} color="white" />;
+export const HomeIcon = (props) => (
+  <Feather name="home" size={44} color="white" {...props} />
+);
