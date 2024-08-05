@@ -1,10 +1,28 @@
-import { View,StyleSheet } from "react-native";
-import { Slot } from "expo-router";
+import { View, StyleSheet, Pressable } from "react-native";
+import { Link, Stack } from "expo-router";
+import { CircleIcon } from "../components/Icons";
+import { Logo } from "../components/Logo";
 
 export default function Layout() {
   return (
     <View style={styles.container}>
-      <Slot />
+      <Stack
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#000",
+          },
+          headerTintColor: "#fff",
+          headerTitle: "",
+          headerLeft: () => <Logo />,
+          headerRight: () => (
+            <Link href="/about" asChild>
+              <Pressable>
+                <CircleIcon />
+              </Pressable>
+            </Link>
+          ),
+        }}
+      />
     </View>
   );
 }
@@ -12,8 +30,6 @@ export default function Layout() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#000",
   },
 });
