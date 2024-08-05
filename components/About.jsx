@@ -7,7 +7,9 @@ export function About() {
     <ScrollView style={styles.container}>
       <Link asChild href="/">
         <Pressable>
-          <CircleIcon size={44} />
+          {({ pressed }) => (
+            <CircleIcon size={44} style={{ opacity: pressed ? 0.5 : 1 }} />
+          )}
         </Pressable>
       </Link>
       <Text style={styles.title}>About</Text>

@@ -34,7 +34,9 @@ export function Main() {
           style={{ color: "#ffff", fontSize: 20, padding: 20 }}
         >
           <Pressable>
-            <HomeIcon size={44}/>
+            {({ pressed }) => (
+              <HomeIcon style={{ opacity: pressed ? 0.5 : 1 }} />
+            )}
           </Pressable>
         </Link>
         {games.length === 0 ? (
