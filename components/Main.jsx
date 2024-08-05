@@ -1,11 +1,8 @@
-import { View, ActivityIndicator, FlatList, Pressable } from "react-native";
+import { View, ActivityIndicator, FlatList } from "react-native";
 import { getLatestGames } from "../lib/metacritic";
 import { useState, useEffect } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedGameCard } from "./GameCard";
-import { Logo } from "./Logo";
-import { Link } from "expo-router";
-import { CircleIcon, HomeIcon } from "./Icons";
 
 export function Main() {
   const [games, setGames] = useState([]);
