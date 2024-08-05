@@ -1,9 +1,22 @@
-import { Text, StyleSheet, ScrollView} from "react-native";
+import { Text, StyleSheet, ScrollView } from "react-native";
 import { Screen } from "./Screen";
+import { Stack } from "expo-router";
+import { Logo } from "./Logo";
 
 export function About() {
   return (
     <Screen>
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: "#ffee00" },
+          headerTintColor: "#000",
+          headerLeft: () => {},
+          headerRight: () => {
+            <Logo />;
+          },
+          headerTitle: "",
+        }}
+      />
       <ScrollView style={styles.container}>
         <Text style={styles.title}>About</Text>
         <Text style={styles.text}>
