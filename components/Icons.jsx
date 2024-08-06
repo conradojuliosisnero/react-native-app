@@ -7,3 +7,7 @@ export const CircleIcon = (props) => (
 export const HomeIcon = (props) => (
   <Feather name="home" size={34} color="white" {...props} />
 );
+
+export const InfoIcon = (props) => (
+  <Feather name="info" size={34} color="white" {...props} />
+)
